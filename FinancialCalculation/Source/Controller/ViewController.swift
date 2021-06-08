@@ -21,10 +21,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .mainBackground
         pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
         scrollView.backgroundColor = .systemFill
         view.addSubview(scrollView)
         view.addSubview(pageControl)
+        buttons()
+        
     }
     @objc private func pageControlDidChange(_ sender: UIPageControl){
         let current = sender.currentPage
@@ -56,6 +59,30 @@ class ViewController: UIViewController {
             scrollView.addSubview(page)
         }
     }
+    func buttons() {
+        let buttonCreateAccount = UIButton()
+        buttonCreateAccount.frame = CGRect(x: view.frame.size.width-372, y: 616, width: 343, height: 52)
+        buttonCreateAccount.backgroundColor = .mainGreen
+        buttonCreateAccount.setTitle("CRIAR CONTA", for: .normal)
+        buttonCreateAccount.layer.cornerRadius = 6
+        buttonCreateAccount.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.view.addSubview(buttonCreateAccount)
+        
+        
+        let buttonLogin = UIButton()
+        buttonLogin.frame = CGRect(x: view.frame.size.width-372, y: 683, width: 343, height: 52)
+        buttonLogin.backgroundColor = .mainBlack
+        buttonLogin.setTitle("LOGIN", for: .normal)
+        buttonLogin.layer.cornerRadius = 6
+        buttonLogin.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        self.view.addSubview(buttonLogin)
+        
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+       print("Button tapped")
+    }
+  
     
 }//nao apagar essa chave
 
