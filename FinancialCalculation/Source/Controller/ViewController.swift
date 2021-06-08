@@ -9,8 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let scrollView = UIScrollView()
+    //MARK: Propertys Buttons
+    var onLoginButtons: ((_ login: LoginType) -> Void)?
+    var loginView = LoginView(frame: .zero)
     
+    //MARK: Propertys PageControl
+    private let scrollView = UIScrollView()
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.numberOfPages = 4
@@ -26,9 +30,21 @@ class ViewController: UIViewController {
         scrollView.backgroundColor = .systemFill
         view.addSubview(scrollView)
         view.addSubview(pageControl)
-        buttons()
+        
+        setActions()
         
     }
+    
+    override func loadView() {
+        self.view = loginView
+    }
+    
+    private func setActions(){
+        loginView.onLoginButtons = { login in self.onLoginButtons?(login)
+            
+        }
+    }
+    
     @objc private func pageControlDidChange(_ sender: UIPageControl){
         let current = sender.currentPage
         scrollView.setContentOffset(CGPoint(x: CGFloat(current) * view.frame.size.width, y: 0), animated: true)
@@ -59,33 +75,9 @@ class ViewController: UIViewController {
             scrollView.addSubview(page)
         }
     }
-    func buttons() {
-        let buttonCreateAccount = UIButton()
-        buttonCreateAccount.frame = CGRect(x: view.frame.size.width-372, y: 616, width: 343, height: 52)
-        buttonCreateAccount.backgroundColor = .mainGreen
-        buttonCreateAccount.setTitle("CRIAR CONTA", for: .normal)
-        buttonCreateAccount.layer.cornerRadius = 6
-        buttonCreateAccount.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.view.addSubview(buttonCreateAccount)
-        
-        
-        let buttonLogin = UIButton()
-        buttonLogin.frame = CGRect(x: view.frame.size.width-372, y: 683, width: 343, height: 52)
-        buttonLogin.backgroundColor = .mainBlack
-        buttonLogin.setTitle("LOGIN", for: .normal)
-        buttonLogin.layer.cornerRadius = 6
-        buttonLogin.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        self.view.addSubview(buttonLogin)
-        
-    }
-    
-    @objc func buttonAction(sender: UIButton!) {
-       print("Button tapped")
-    }
   
-    
-}//nao apagar essa chave
-
+  
+}
 
 
 
