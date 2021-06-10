@@ -9,17 +9,30 @@ import UIKit
 
 class HomeLoginViewController: UIViewController {
     
-    let homeLogin = HomeLoginView(frame: .zero)
+    //MARK: Actions
+    var onLoginButton: ((_ login: LoginType) -> Void)?
+    
+    
+    let homeLoginView = HomeLoginView(frame: .zero)
+    
     let settingsPage = SettingsPageControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsPage.addToViewControllerPageControl(view: view)
+        self.title = "LOGIN"
+        setActions()
     }
     
     //MARK: Propertys Buttons
     override func loadView() {
-        self.view = homeLogin
+        self.view = homeLoginView
+    }
+    
+    private func setActions() {
+        homeLoginView.onLoginButton = { login in
+            self.onLoginButton?(login)
+        }
     }
     
     //MARK: Propertys PageControl

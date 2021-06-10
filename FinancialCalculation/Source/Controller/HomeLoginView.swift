@@ -8,6 +8,9 @@
 import UIKit
 
 class HomeLoginView: UIView {
+        
+    //MARK: Actions
+    var onLoginButton: ((_ login: LoginType) -> Void)?
     
     //MARK: BUTTONS
     let buttonCreateAccount: UIButton = {
@@ -57,7 +60,7 @@ class HomeLoginView: UIView {
         ])
     }
     
-    //MARK: Action
+    //MARK: Actions
     @objc func buttonActionCreateAccount(_ sender:UIButton!){
        print("Button create account acionado")
     }
@@ -74,6 +77,7 @@ class HomeLoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func createViewButton(){
         setButtonCreateAccount()
         setButtonLogin()

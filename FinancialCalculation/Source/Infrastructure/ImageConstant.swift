@@ -9,16 +9,16 @@ import UIKit
 
 public extension UIImage {
     @objc
-    static var descomplicou: UIImage {
-        return UIImage(named: "descomplicou")!
+    static var imageDescomplicou: UIImage {
+        return UIImage(named: "imageDescomplicou")!
     }
-    static var ficaDica: UIImage {
-        return UIImage(named: "ficaDica")!
+    static var imageFicaDica: UIImage {
+        return UIImage(named: "imageFicaDica")!
     }
-    static var naPalmaDaMao: UIImage {
-        return UIImage(named: "naPalmaDaMao")!
+    static var imageNaPalmaDaMao: UIImage {
+        return UIImage(named: "imageNaPalmaDaMao")!
     }
-    static var planejamento: UIImage {
-        return UIImage(named: "planejamento")!
+    static var imagePlanejamento: UIImage {
+        return UIImage(named: "imagePlanejamento")!
     }
 }
