@@ -10,7 +10,7 @@ import UIKit
 class HomeLoginViewController: UIViewController {
     
     //MARK: Actions
-    var onLoginButton: ((_ login: LoginType) -> Void)?
+    var onLoginButton: ((_ setLogin: LoginType) -> Void)?
     
     
     let homeLoginView = HomeLoginView(frame: .zero)
@@ -20,7 +20,6 @@ class HomeLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsPage.addToViewControllerPageControl(view: view)
-        self.title = "LOGIN"
         setActions()
     }
     
@@ -30,8 +29,8 @@ class HomeLoginViewController: UIViewController {
     }
     
     private func setActions() {
-        homeLoginView.onLoginButton = { login in
-            self.onLoginButton?(login)
+        homeLoginView.onLoginButton = { setLogin in
+            self.onLoginButton?(setLogin)
         }
     }
     

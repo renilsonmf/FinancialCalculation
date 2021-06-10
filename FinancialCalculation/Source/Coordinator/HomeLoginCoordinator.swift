@@ -15,10 +15,16 @@ class HomeLoginCoordinator: Coordinator {
     }
     
     func start() {
-        let viewController = HomeLoginViewController()
-        self.navigationController.isNavigationBarHidden = true
-        self.navigationController.pushViewController(viewController, animated: false)
+        let homeLoginViewController = HomeLoginViewController()
+        
+        homeLoginViewController.onLoginButton = { setLogin in
+            let coordinator = CreateAccountCoordinator(navigationController: self.navigationController, setLogin: setLogin)
+            coordinator.start()
+            
         }
+        self.navigationController.pushViewController(homeLoginViewController, animated: true)
+    }
+    
         
        
     }

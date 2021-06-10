@@ -21,8 +21,6 @@ class HomeLoginView: UIView {
         button.backgroundColor = .mainGreen
         button.setTitle("CRIAR CONTA", for: .normal)
         button.tintColor = .mainBackground
-        button.addTarget(self, action: #selector(buttonActionCreateAccount), for: .touchUpInside)
-        
         return button
     }()
     
@@ -34,13 +32,14 @@ class HomeLoginView: UIView {
         button.backgroundColor = .mainBlack
         button.setTitle("Login", for: .normal)
         button.tintColor = .mainBackground
-        button.addTarget(self, action: #selector(buttonActionlogin), for: .touchUpInside)
-        
         return button
     }()
     
     //MARK: Constraints
      func setButtonCreateAccount(){
+        buttonCreateAccount.addTarget(self, action: #selector(createAccountActionButton), for: .touchUpInside)
+        buttonLogin.addTarget(self, action: #selector(loginActionButton), for: .touchUpInside)
+        
         addSubview(buttonCreateAccount)
         NSLayoutConstraint.activate([
             buttonCreateAccount.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 600),
@@ -48,6 +47,20 @@ class HomeLoginView: UIView {
             buttonCreateAccount.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12),
             buttonCreateAccount.heightAnchor.constraint(equalToConstant: 48)
         ])
+    }
+    
+    //MARK: Actions
+    @objc
+    func createAccountActionButton(sender: UIButton!) {
+        onLoginButton?(LoginType.CreateAccount)
+        print("Button create account acionado")
+    }
+    
+    @objc
+    func loginActionButton(sender: UIButton!) {
+        onLoginButton?(LoginType.Login)
+        print("Button login acionado")
+
     }
     
      func setButtonLogin() {
@@ -58,14 +71,6 @@ class HomeLoginView: UIView {
             buttonLogin.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12),
             buttonLogin.heightAnchor.constraint(equalToConstant: 48)
         ])
-    }
-    
-    //MARK: Actions
-    @objc func buttonActionCreateAccount(_ sender:UIButton!){
-       print("Button create account acionado")
-    }
-    @objc func buttonActionlogin(_ sender:UIButton!){
-      print("Button login acionado")
     }
     
     //MARK: Cria e seta os buttons
@@ -79,8 +84,10 @@ class HomeLoginView: UIView {
     }
     
     func createViewButton(){
+        self.backgroundColor = .mainGreen
         setButtonCreateAccount()
         setButtonLogin()
+
     }
     
 
