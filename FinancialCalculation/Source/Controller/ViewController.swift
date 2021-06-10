@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //MARK: Actions Buttons
-     var onLoginButtons: ((_ login: LoginType) -> Void)?
     
+    var homeLogin = HomeLoginView(frame: .zero)
+        
     //MARK: Propertys PageControl
    let settingsPage = SettingsPageControl()
     
@@ -19,25 +19,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .mainBackground
         settingsPage.pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
-        settingsPage.scrollView.backgroundColor = .systemFill
+        //settingsPage.scrollView.backgroundColor = .systemRed
         view.addSubview(settingsPage.scrollView)
-        view.addSubview(settingsPage.pageControl)
-        
-        setActions()
-        
+       view.addSubview(settingsPage.pageControl)
+              
+        //homeLogin.buttons()
     }
     
     //MARK: Propertys Buttons
-    var loginView = LoginView(frame: .zero)
-    
     override func loadView() {
-        self.view = loginView
+        self.view = homeLogin
     }
     
-    private func setActions(){
-        loginView.onLoginButtons = { login in self.onLoginButtons?(login)
-        }
-    }
     
     @objc private func pageControlDidChange(_ sender: UIPageControl){
         let current = sender.currentPage
