@@ -9,9 +9,7 @@ import UIKit
 
 class HomeLoginViewController: UIViewController {
     
-    //MARK: Actions
     var onLoginButton: ((_ setLogin: LoginType) -> Void)?
-    
     
     let homeLoginView = HomeLoginView(frame: .zero)
     
@@ -19,6 +17,7 @@ class HomeLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
         settingsPage.addToViewControllerPageControl(view: view)
         setActions()
     }
@@ -28,22 +27,20 @@ class HomeLoginViewController: UIViewController {
         self.view = homeLoginView
     }
     
+    //MARK: Propertys PageControl
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        settingsPage.setFramePageScroll(view: view)
+    }
+    
+    //MARK: Actions
     private func setActions() {
         homeLoginView.onLoginButton = { setLogin in
             self.onLoginButton?(setLogin)
         }
     }
     
-    //MARK: Propertys PageControl
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        settingsPage.pageControl.frame = CGRect(x: 0, y: settingsPage.scrollView.frame.size.height-18, width: view.frame.size.width, height: 70)
-        settingsPage.scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 460)
-        
-        if settingsPage.scrollView.subviews.count == 2 {
-            settingsPage.configureScrollView(view: view)
-        }
-    }
+   
   
 }
 

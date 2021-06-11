@@ -12,14 +12,15 @@ class CreateAccountViewController: UIViewController {
     var createAccountView = CreateAccountView(frame: .zero)
     
     override func viewDidLoad() {
-        
-    }
-    
-    func setViewCreateAccount(){
-        self.title = "teste"
+        self.view.backgroundColor = .mainBackground
+        self.navigationItem.backBarButtonItem?.title = "Abra sua conta"
+        title = "Abra sua conta"
     }
     
     override func loadView() {
         self.view = createAccountView
+        
     }
 }
+
+

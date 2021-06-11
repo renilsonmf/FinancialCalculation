@@ -45,4 +45,13 @@ public class SettingsPageControl: UIView {
         let current = sender.currentPage
         scrollView.setContentOffset(CGPoint(x: CGFloat(current) * scrollView.frame.size.width, y: 0), animated: true)
     }
+    
+    func setFramePageScroll(view: UIView){
+        pageControl.frame = CGRect(x: 0, y: scrollView.frame.size.height-18, width: view.frame.size.width, height: 70)
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 460)
+        
+        if scrollView.subviews.count == 2 {
+            configureScrollView(view: view)
+        }
+    }
 }

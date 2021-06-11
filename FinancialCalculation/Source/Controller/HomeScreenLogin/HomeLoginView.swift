@@ -42,7 +42,7 @@ class HomeLoginView: UIView {
         
         addSubview(buttonCreateAccount)
         NSLayoutConstraint.activate([
-            buttonCreateAccount.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 600),
+            buttonCreateAccount.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 450),
             buttonCreateAccount.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12),
             buttonCreateAccount.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12),
             buttonCreateAccount.heightAnchor.constraint(equalToConstant: 48)
