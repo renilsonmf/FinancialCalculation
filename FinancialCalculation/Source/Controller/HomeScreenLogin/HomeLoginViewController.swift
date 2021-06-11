@@ -9,7 +9,7 @@ import UIKit
 
 class HomeLoginViewController: UIViewController {
     
-    var onLoginButton: ((_ setLogin: LoginType) -> Void)?
+    var onLoginButton: ((_ setLogin: LoginType ) -> Void)?
     
     let homeLoginView = HomeLoginView(frame: .zero)
     

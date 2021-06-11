@@ -18,6 +18,7 @@ class CreateAccountCoordinator: Coordinator {
     
     func start() {
         self.setViewControllerCreateAccount()
+  
     }
     
     private func setViewControllerCreateAccount(){

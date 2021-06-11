@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LoginType: String, CodingKey {
+enum LoginType: CodingKey {
     case CreateAccount
     case Login
 }

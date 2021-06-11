@@ -12,8 +12,6 @@ class CreateAccountViewController: UIViewController {
     var createAccountView = CreateAccountView(frame: .zero)
     
     override func viewDidLoad() {
-        self.view.backgroundColor = .mainBackground
-        self.navigationItem.backBarButtonItem?.title = "Abra sua conta"
         title = "Abra sua conta"
     }
     
@@ -21,6 +19,7 @@ class CreateAccountViewController: UIViewController {
         self.view = createAccountView
         
     }
+   
 }
 
 

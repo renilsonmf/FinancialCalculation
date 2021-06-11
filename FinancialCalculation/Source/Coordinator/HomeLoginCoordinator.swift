@@ -18,11 +18,19 @@ class HomeLoginCoordinator: Coordinator {
         let homeLoginViewController = HomeLoginViewController()
         
         homeLoginViewController.onLoginButton = { setLogin in
-            let coordinator = CreateAccountCoordinator(navigationController: self.navigationController, setLogin: setLogin)
-            coordinator.start()
-            
+            switch setLogin {
+            case .CreateAccount:
+                let coordinator = CreateAccountCoordinator(navigationController: self.navigationController, setLogin: setLogin)
+                coordinator.start()
+                
+            case .Login:
+                let coordinator = LoginCoordinator(navigationController: self.navigationController, setLogin: setLogin)
+                 coordinator.start()
+            }
+           
         }
         self.navigationController.pushViewController(homeLoginViewController, animated: true)
+        
     }
     
         

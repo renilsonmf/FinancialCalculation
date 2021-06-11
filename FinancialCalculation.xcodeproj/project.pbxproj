@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0FC11E2673AF53009CC512 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC11D2673AF53009CC512 /* LoginViewController.swift */; };
+		1C0FC1262673AF86009CC512 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC1252673AF86009CC512 /* LoginView.swift */; };
+		1C0FC12C2673B12A009CC512 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C0FC12B2673B12A009CC512 /* LoginCoordinator.swift */; };
 		1C335EDF266EABCB004530D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C335EDE266EABCB004530D8 /* AppDelegate.swift */; };
 		1C335EE1266EABCB004530D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C335EE0266EABCB004530D8 /* SceneDelegate.swift */; };
 		1C335EE3266EABCB004530D8 /* HomeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C335EE2266EABCB004530D8 /* HomeLoginViewController.swift */; };
@@ -46,6 +49,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C0FC11D2673AF53009CC512 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1C0FC1252673AF86009CC512 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1C0FC12B2673B12A009CC512 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		1C335EDB266EABCB004530D8 /* FinancialCalculation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialCalculation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C335EDE266EABCB004530D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C335EE0266EABCB004530D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C0FC11C2673AF0E009CC512 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1C0FC11D2673AF53009CC512 /* LoginViewController.swift */,
+				1C0FC1252673AF86009CC512 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		1C335ED2266EABCB004530D8 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				1C64306F267294AD00F4CC7A /* HomeScreenLogin */,
+				1C0FC11C2673AF0E009CC512 /* Login */,
 				1C643070267294F400F4CC7A /* CreateAccount */,
 			);
 			path = Controller;
@@ -194,6 +210,7 @@
 				1C64305A267277C300F4CC7A /* Coordinator.swift */,
 				1C6430622672782D00F4CC7A /* HomeLoginCoordinator.swift */,
 				1C6430792672959500F4CC7A /* CreateAccountCoordinator.swift */,
+				1C0FC12B2673B12A009CC512 /* LoginCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -347,9 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C0FC12C2673B12A009CC512 /* LoginCoordinator.swift in Sources */,
 				1C6430722672953900F4CC7A /* CreateAccountViewController.swift in Sources */,
 				1C335FC5266EC486004530D8 /* ImageConstant.swift in Sources */,
 				1CC0771A266FFDA500265A05 /* SettingsPageControl.swift in Sources */,
+				1C0FC11E2673AF53009CC512 /* LoginViewController.swift in Sources */,
 				1C64307A2672959500F4CC7A /* CreateAccountCoordinator.swift in Sources */,
 				1C335EE3266EABCB004530D8 /* HomeLoginViewController.swift in Sources */,
 				1C335EDF266EABCB004530D8 /* AppDelegate.swift in Sources */,
@@ -360,6 +379,7 @@
 				1C64307F2672974300F4CC7A /* CreateAccountView.swift in Sources */,
 				1C64305B267277C300F4CC7A /* Coordinator.swift in Sources */,
 				1C6430682672796D00F4CC7A /* LoginType.swift in Sources */,
+				1C0FC1262673AF86009CC512 /* LoginView.swift in Sources */,
 				1C6430632672782D00F4CC7A /* HomeLoginCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
